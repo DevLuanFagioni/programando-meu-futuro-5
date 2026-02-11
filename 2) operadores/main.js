@@ -79,3 +79,24 @@ const mediaAluno2 = 8
 const faltasAluno2 = 3
 const idadeAluno2 = 20
 console.log( mediaAluno2 >= 7 && faltasAluno2 < 5 ) 
+
+
+// EXEMPLO com sistema de login:
+// dados do usuário (armazenados no sistema)
+const nomeUsuario = "luan"
+const senhaUsuario = "luan123"
+const emailUsuario = "luan@gmail.com"
+const cpfUsuario = "12345678900"
+
+// dados de entrada (digitados pelo usuário)
+const nomeInput = "luan"
+const senhaInput = "luan123"
+const emailInput = "luan@gmail.com"
+const cpfInput = "12345678901" // erro de digitação
+
+// VERIFICAÇÃO DE LOGIN:
+const login = nomeUsuario === nomeInput &&
+              senhaUsuario === senhaInput && 
+              emailUsuario === emailInput &&
+              cpfUsuario === cpfInput
+console.log(login)
