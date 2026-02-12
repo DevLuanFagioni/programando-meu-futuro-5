@@ -21,6 +21,7 @@ const login = nomeUsuario === nomeInput &&
 // IF = "se"
 // ELSE IF = "senão se"
 // ELSE = "senão"
+// USADO PARA VERIFICAR SE UMA CONDIÇÃO É VERDADEIRA OU FALSA E EXECUTAR CÓDIGOS DIFERENTES PARA CADA CASO
 
 if (5 == 4) {
     // Só executa se a condição do IF for verdadeira
@@ -54,3 +55,23 @@ if (mediaAluno >= mediaEscola) {
 } else{
     console.log("ERRO, TENTE NOVAMENTE.")
 }
+
+// ESTRUTURA DE CONTROLE: SWITCH CASE
+// USADO QUANDO QUEREMOS VERIFICAR O VALOR DE UMA VARIÁVEL E EXECUTAR CÓDIGOS DIFERENTES PARA CADA VALOR
+const clima = "ensolarado"
+
+switch (clima){
+    case "ensolarado":
+        console.log("Dia bom para praia");
+        break // O "break" serve para interromper a execução do switch case, evitando que ele continue verificando os próximos casos mesmo depois de encontrar um caso verdadeiro
+    case "chuvoso":
+        console.log("Dia bom para ficar em casa");
+        break
+    case "nublado":
+        console.log("Dia bom para passear");
+        break
+    default:
+        console.log("Clima desconhecido");
+}
+
+
