@@ -20,7 +20,6 @@ mediaAluno = mediaAluno / notasAluno.length
 if (mediaAluno >= 7) {
     console.log("SUA NOTA FOI: ", mediaAluno);
     console.log("PARABENS VOCE FOI APROVADO");
-    
 } else if (mediaAluno >= 5 && mediaAluno < 7) {
     console.log("SUA NOTA FOI: ", mediaAluno);
     console.log("VOCE ESTA DE RECUPERACAO");
