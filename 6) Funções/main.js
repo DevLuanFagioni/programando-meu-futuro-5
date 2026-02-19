@@ -69,9 +69,8 @@ function verificarMedia() {
 // Exemplos de chamadas das funções
 removerNota()
 adicionarNota()
-calcularMedia()
-verificarMedia()
-
+const media = calcularMedia()
+const mensagem = verificarMedia()
 
 /**
  * ============================================================
@@ -104,6 +103,7 @@ nomeDaFuncao()
 
 // ESCOPO GLOBAL
 const nomeFora = "Luan"
+nomeFora = "Teste"
 
 function exibirNome() {
   // ESCOPO LOCAL
@@ -146,28 +146,28 @@ function nomeDaFuncao() {
  */
 
 // EXEMPLO 1: Função retornando string concatenada
-function mostrarNome() {
+function juntarNome() {
   const nome = "Luan"
   const sobreNome = " Fagioni"
   return nome + sobreNome
 }
 
 // Se não capturarmos o retorno, o valor é processado mas "perdido" (ignorado)
-mostrarNome()
+juntarNome()
 
 // Se queremos usar o valor depois, precisamos armazená-lo em uma variável
-const nomeCompleto = mostrarNome()
+const nomeCompleto = juntarNome()
 console.log(nomeCompleto)
 
 
 // EXEMPLO 2: Função retornando um Objeto (Múltiplos valores)
 function calcularMedia2() {
   let quantidadeDeNotas = notasAluno.length
-  let somatorio = 0
-  let media = 0
+  let somatorio = 120
+  let media = somatorio / quantidadeDeNotas
   return {
-    notas: quantidadeDeNotas,
-    soma: somatorio,
+    quantidadeDeNotas: quantidadeDeNotas,
+    somatorio: somatorio,
     media: media
   }
 }
@@ -204,6 +204,35 @@ function nomeDaFuncao(parametro1, parametro2) {
   return "valor";
 }
 
+// EXEMPLO DE USO
+function boasVindas(nome, sobrenome){
+  console.log("Boas vindas: " + nome + sobrenome);
+}
+boasVindas("Luan", " Fagioni")
+boasVindas("Ana", " Silva")
+
+function somar(numero1, numero2) {
+  console.log( numero1 + numero2 );
+}
+somar(10, 20)
+somar(100, 200)
+
+// FUNÇÃO DE CRIAR EMAIL
+function criarEmail(nome, sobrenome) {
+  const finalEmail = "@cpdi.com"
+  const email = nome + "." + sobrenome + finalEmail
+  return email
+}
+
+const email = criarEmail("Luan", "Fagioni")
+console.log(email)
+
+// FUNCAO DE FORMATAR PRECO
+function formatarPreco(preco) {
+  return "R$ " + preco
+}
+const preco = formatarPreco(50.99)
+console.log(preco)
 
 /**
  * ============================================================
