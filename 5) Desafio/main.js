@@ -29,7 +29,3 @@ if (mediaAluno >= 7) {
 }
 
 
-
-
-
-
