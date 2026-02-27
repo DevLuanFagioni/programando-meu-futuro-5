@@ -4,15 +4,12 @@ function filaDeEspera(fila, pessoa) {
     if (!pessoa && !fila) {
         return "Valores invalidos"
     }
-
-    const adicionado = fila.push(pessoa)
+    
+    fila.push(pessoa)
     const atendido = fila.shift()
     const proximo = fila[0]
-    return {
-        adicionado,
-        atendido,
-        proximo
-    }
+
+    return `Atendido: ${atendido}, Proximo: ${proximo}`
 }
 console.log( filaDeEspera(filaAtual, "Cleusa") );
 
@@ -27,9 +24,9 @@ function verificarPalindromo(palavra) {
     const palavraInvertida = palavra.split("").reverse().join("")
 
     if (palavraFormatada === palavraInvertida) {       
-        return palavraFormatada + " é um palindromo"
+        return `A palavra: "${palavraFormatada}" é um palindromo`
     } else {
-        return  palavraFormatada + "não é um palindromo"
+        return `A palavra: "${palavraFormatada}" não é um palindromo`
     }
 }
 console.log( verificarPalindromo("natan") );
@@ -113,7 +110,7 @@ function analisar(usuarios, tipo) {
         })
         const media = somatorio / quantidadeUsuario
         
-        return "Total de usuarios: " + quantidadeUsuario + " - " + "Media total: " + media.toFixed(2)
+        return `Total de usuarios: ${quantidadeUsuario} Valor total: ${media.toFixed(2)}`
     }
 
     if (tipo === "negativo") {
