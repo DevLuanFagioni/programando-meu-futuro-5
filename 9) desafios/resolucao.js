@@ -1,3 +1,4 @@
+// RESOLUÇÃO DESAFIO 1
 const filaAtual = ["Luan", "Ana", "Thor"]
 function filaDeEspera(fila, pessoa) {
     if (!pessoa && !fila) {
@@ -13,8 +14,10 @@ function filaDeEspera(fila, pessoa) {
         proximo
     }
 }
-filaDeEspera(filaAtual, "Cleusa")
+console.log( filaDeEspera(filaAtual, "Cleusa") );
 
+
+// RESOLUÇÃO DESAFIO 2
 function verificarPalindromo(palavra) {
     if (!palavra) {
         return "Valores invalidos"
@@ -29,18 +32,38 @@ function verificarPalindromo(palavra) {
         return  palavraFormatada + "não é um palindromo"
     }
 }
-verificarPalindromo("natan")
+console.log( verificarPalindromo("natan") );
 
-function cifrar(palavra) {
+
+// RESOLUÇÃO DESAFIO 3
+function cifraDeCesar(tipo, palavra, deslocamento) {
+    if (!palavra) {
+        return "Palavra invalida"
+    }
+
     const alfabeto = "abcdefghijklmnopqrstuvwxyz"
-    const deslocamento = 3
     const mensagem = palavra.trim().toLowerCase().replace(/[^a-záéíóúâêôãõç]/g, "")
     
     const letrasMensagem = mensagem.split("")
-    const letrasCifradas = []
+
+    const letrasCifradas = letrasMensagem.map((letra)=>{
+        const posicaoLetra = alfabeto.indexOf(letra) 
+        let posicaoLetraCifrada
+
+        if (tipo === "cifrar") {
+            posicaoLetraCifrada = (posicaoLetra + deslocamento) % 26
+        } else if (tipo === "descifrar"){
+            posicaoLetraCifrada = (posicaoLetra - deslocamento) % 26
+        }
+        
+        return alfabeto[posicaoLetraCifrada]      
+    })
     
+    return letrasCifradas.join("")
 }
-cifrar(" Luan@#$@")
+console.log( cifraDeCesar("descifrar", "xyz", 3) );
+
+
 
 const usuarios = [
   { id: 1, nome: "Ana Silva", idade: 28, email: "ana.silva@email.com", banco: "Nubank", saldo: 1500.50, ativo: true },
@@ -75,7 +98,33 @@ const usuarios = [
   { id: 30, nome: "Isabela Moura", idade: 20, email: "isa.moura@email.com", banco: "Itaú", saldo: 75.50, ativo: true }
 ];
 
+// RESOLUÇÃO DESAFIO 4
 function analisar(usuarios, tipo) {
-    
+    if (!usuarios && !tipo) {
+        return "Valores invalidos"
+    }
+
+    function calcularMedia(lista) {
+        const quantidadeUsuario = lista.length
+        
+        let somatorio = 0
+        lista.forEach((item)=>{
+          somatorio = somatorio + item.saldo
+        })
+        const media = somatorio / quantidadeUsuario
+        
+        return "Total de usuarios: " + quantidadeUsuario + " - " + "Media total: " + media.toFixed(2)
+    }
+
+    if (tipo === "negativo") {
+        const negativos = usuarios.filter( (usuario) => usuario.saldo <= 0 && usuario.ativo ) 
+        return calcularMedia(negativos)
+
+    } else if ( tipo === "positivo" ) {
+        const positivos = usuarios.filter( (usuario) => usuario.saldo >= 0 && usuario.ativo )
+        return calcularMedia(positivos)
+
+    }
+
 }
-analisar(usuarios, "devedor")
+console.log( analisar(usuarios, "positivo") );
