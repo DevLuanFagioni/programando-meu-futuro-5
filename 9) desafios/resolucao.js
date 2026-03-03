@@ -7,7 +7,8 @@ function filaDeEspera(fila, pessoa) {
     
     fila.push(pessoa)
     const atendido = fila.shift()
-    const proximo = fila[0] ? fila[0] : "Não tem proximo"
+    const [primeiro] = fila
+    const proximo = primeiro ? primeiro : "Não tem proximo"
 
     return `Atendido: ${atendido}, Proximo: ${proximo}`
 }
