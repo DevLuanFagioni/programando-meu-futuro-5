@@ -1,3 +1,4 @@
+
 /**
  * ============================================================
  * DESESTRUTURAÇÃO (DESTRUCTURING)
@@ -196,4 +197,3 @@ console.log(usuarioCompleto);
 const usuario3 = { ...usuario1, idade: 25, ativo: true }
 console.log(usuario3); 
 // { nome: "Luan", idade: 25, ativo: true } - idade foi sobrescrita
-

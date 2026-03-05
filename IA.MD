@@ -54,5 +54,3 @@ IAs que não apenas respondem perguntas, mas **executam ações** (navegam na we
 ### Ferramentas Úteis
 - **NotebookLM (Google)**: Transforma seus documentos (PDFs, textos) em um podcast de áudio ou em um especialista que responde perguntas sobre o material.
 - **Antigravity / Gemini CLI**: Ferramentas para usar o poder do Gemini diretamente no seu terminal.
-
-
