@@ -88,7 +88,41 @@ async function buscarDados() {
 }
 
 // Executa a função
-buscarDados()
+// buscarDados()
+
+async function getMovies(pagina) {
+    if (!pagina) {
+        return "Precisa passar uma pagina"
+    }
+
+    const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NjI4MjQzOTkwZmMxNTNmNTFhOTJiMWM5YWI5YTRlMSIsIm5iZiI6MTcyOTAwOTg3OS44LCJzdWIiOiI2NzBlOThkN2Q1ZjkzYTNkYTBiYzYyMzgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.sK77erEYNapVaTdoIzPrs9ONLMSA9XqVRKCZgs_g7To"
+
+    const res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=pt-br&page=${pagina}`, {
+        headers: {
+            "Authorization": `Bearer ${accessToken}`
+        }
+    })
+    
+    if (!res.ok) {
+        return "Falha na requisição, tente novamente."
+    }
+    
+    const filmes = await res.json()
+
+    filmes.results.forEach((filme)=>{
+        const {title, overview, vote_average, release_date} = filme
+        console.log("Titulo: " + title);
+        console.log("Nota: " + vote_average);
+        console.log("Data: " + release_date);
+        console.log("Descrição: " + overview);
+        console.log("--------------");
+        
+    })
+
+}
+getMovies(2)
+getMovies()
+
 
 /**
  * ============================================================
