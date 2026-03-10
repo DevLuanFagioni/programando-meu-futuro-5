@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 /**
  * ============================================================
  * REQUISIÇÕES DE API E FUNÇÕES ASSINCRONAS
@@ -95,7 +97,7 @@ async function getMovies(pagina) {
         return "Precisa passar uma pagina"
     }
 
-    const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NjI4MjQzOTkwZmMxNTNmNTFhOTJiMWM5YWI5YTRlMSIsIm5iZiI6MTcyOTAwOTg3OS44LCJzdWIiOiI2NzBlOThkN2Q1ZjkzYTNkYTBiYzYyMzgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.sK77erEYNapVaTdoIzPrs9ONLMSA9XqVRKCZgs_g7To"
+    const accessToken = process.env.TOKEN_DA_API
 
     const res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=pt-br&page=${pagina}`, {
         headers: {
@@ -139,7 +141,55 @@ getMovies()
  */
 
 
+async function buscarPost(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    const data = await res.json()
+    return data
+}
+buscarPost(3)
 
 
+async function enviarPost() {
+    const dados = {
+        title: "teste",
+        body: "corpo do teste"
+    }
 
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify(dados)
+    })
+    const data = await res.json()
+    return data
+}
+enviarPost()
 
+async function deletarPost() {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/1`, {
+        method: "delete"
+    })   
+    const data = await res.json()
+    return data
+}
+deletarPost()
+
+async function alterarPost() {
+    const dados = {
+        title: "teste",
+        body: "corpo do teste"
+    }
+
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+        method: "PUT",
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: JSON.stringify(dados)
+    })   
+    const data = await res.json()
+    return data
+}
+alterarPost()
