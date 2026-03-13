@@ -1,5 +1,6 @@
 import kaboom from "kaboom"
 import movimentacaoPlayer from "./movimentacao"
+import adicionaLevel from "./adicionaLevel"
 
 // INICIA A LIB NO PROJETO
 kaboom()
@@ -10,6 +11,11 @@ setGravity(1600)
 // CARREGAR SPRITES
 //            NOME       ENDEREÇO
 loadSprite("player", "sprites/bean.png")
+loadSprite("coin", "sprites/coin.png")
+loadSprite("spike", "sprites/spike.png")
+loadSprite("floor", "sprites/tile/2.png")
+
+adicionaLevel()
 
 // ADICIONAR PARA O JOGO
 const player = add([
@@ -17,15 +23,6 @@ const player = add([
 	sprite("player"), // vincula um sprite ao elemento
 	body(), // adiciona fisica para o elemento
 	area() // adiciona um corpo para colisao
-])
-
-const chao = add([
-    rect(width(), 48),
-    pos(0, height() - 48),
-    outline(4),
-    area(),
-    body({ isStatic: true }),
-    color(127, 200, 255),
 ])
 
 // EMISSAO DE EVENTOS
