@@ -1,0 +1,22 @@
+#home{
+
+    h1{
+        font-size: 60px;
+        font-weight: 100;
+        line-height: 80px;
+
+        span{
+           font-weight: 900;
+        }
+    }
+
+    p{
+        color: #616161;
+        width: 600px;
+    }
+
+    a{
+        color: #000000;
+        border: 2px solid #000000;
+    }
+}
