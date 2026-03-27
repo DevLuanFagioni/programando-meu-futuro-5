@@ -1,0 +1,22 @@
+#experiencia{
+    background-color: #000000;
+    color: #ffffff;
+
+    >h1{
+        text-align: center;
+        margin-bottom: 60px;
+        font-size: 48px;
+        font-weight: 100;
+
+        span{
+            font-weight: 900;
+        }
+    }
+
+    >div{
+        margin-bottom: 30px;
+        padding: 30px 24px;
+        border-radius: 10px;
+        border: #71717A solid 1px
+    }
+}
