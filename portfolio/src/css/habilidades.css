@@ -1,0 +1,31 @@
+#habilidades{
+
+    h1{
+        font-size: 40px;
+        font-weight: 100;
+        margin-bottom: 40px;
+        span{font-weight: 900;}
+    }
+
+    .habilidades-conteudo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div{
+            width: 200px;
+            height: 200px;
+            border: solid 2px #000000;
+            border-radius: 4px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 50px;
+            }
+        }
+    }
+}
