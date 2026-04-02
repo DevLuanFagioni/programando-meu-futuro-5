@@ -11,6 +11,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        
+        @media(max-width: 1200px){
+            justify-content: space-around;
+        }
 
         div{
             width: 200px;

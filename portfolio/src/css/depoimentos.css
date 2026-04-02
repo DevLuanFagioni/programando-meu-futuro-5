@@ -13,11 +13,15 @@
     
     .depoimentos-conteudo{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .depoimentos-conteudo > div{
         width: 30%;
+        min-width: 300px;
+        max-width: 450px;
         padding: 40px;
         border: #71717A solid 1px;
         border-radius: 10px;
