@@ -23,11 +23,15 @@
             height: 200px;
             border: solid 2px #000000;
             border-radius: 4px;
-            
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            &:hover{
+                background-color: #000000;
+                color: #ffffff;
+            }
 
             img{
                 width: 50px;

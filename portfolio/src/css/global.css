@@ -6,3 +6,16 @@ section{
 header, footer{
     padding: 30px 10%;
 }
+
+img:hover{
+    transform: scale(1.05);
+}
+
+h1:hover{
+    letter-spacing: 1px;
+}
+
+::selection{
+    background-color: #000000;
+    color: #ffffff;
+}
