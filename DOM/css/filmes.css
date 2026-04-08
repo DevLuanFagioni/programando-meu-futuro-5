@@ -1,0 +1,14 @@
+#filmes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filme{
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+}
